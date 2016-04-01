@@ -22,9 +22,9 @@
 #ifndef SYSTEM_H
 #define SYSTEM_H
 
-#include<string>
-#include<thread>
-#include<opencv2/core/core.hpp>
+#include <string>
+#include <thread>
+#include <opencv2/core/core.hpp>
 
 #include "Tracking.h"
 #include "FrameDrawer.h"
@@ -57,6 +57,7 @@ public:
     };
 
 public:
+    System(){};
 
     // Initialize the SLAM system. It launches the Local Mapping, Loop Closing and Viewer threads.
     System(const string &strVocFile, const string &strSettingsFile, const eSensor sensor, const bool bUseViewer = true);
@@ -110,7 +111,7 @@ public:
     // SaveMap(const string &filename);
     // LoadMap(const string &filename);
 
-private:
+protected:
 
     // Input sensor
     eSensor mSensor;
